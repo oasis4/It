@@ -8,11 +8,9 @@ class Rechteck:
 
     def __init__(self, farbe, hintergrund):
         self.farbe=farbe
-        self.img = PhotoImage(file='Hintergrund.jpg')
-        Label(self.root, image=self.img).pack()
 
 
-        self.hintergrund = self.img
+        self.hintergrund = hintergrund
         self.x=1
         self.y=1
         root = Tk()
