@@ -3,6 +3,7 @@ import winsound
 from time import *
 from tkinter import messagebox
 from tkinter import *
+from tkinter import ttk
 class Rechteck:
 
 
@@ -23,8 +24,8 @@ class Rechteck:
         root.bind("<KeyPress-d>", self.R_rechts_bewegen)
         root.bind("<KeyPress-s>", self.R_abwaerts_bewegen)
         root.bind("<KeyPress-w>", self.R_aufwaerts_bewegen)
-        ende = Button(root, text = 'Ende', bg = 'white', fg = 'red', relief = 'sunken', command = root.destroy)
-        ende.pack()
+        stop = ttk.Button(root, text='Stop', command=root.destroy)
+        stop.pack()
 
         while 1:
             self.bild.move(self.rectangle, self.x, self.y)
@@ -34,11 +35,10 @@ class Rechteck:
                 self.bild.destroy()
                 break
             elif self.bild.coords(self.rectangle)[0]<0 or self.bild.coords(self.rectangle)[2]>500:
-                messagebox.showinfo(title='Ende', message='Verloren!!')
                 self.bild.destroy()
                 break
             else:
-                sleep(0.1)
+                sleep(0.01)
                 self.bild.update()    
         
     def R_links_bewegen(self, event):

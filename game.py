@@ -3,6 +3,18 @@ import winsound
 from tkinter import ttk
 from rechtecksteuerung2 import *
 from winsound import *
+from random import *
+
+
+def Zufallszahl(x, y):
+    z = randint(x, y)
+    return z
+
+def start():
+
+    rl = Rechteck("red", "white")
+    rl.R_zeichnen()
+    rl.R_bewegen()
 
 
 class Menu:
@@ -11,14 +23,11 @@ class Menu:
         root = tk.Tk()
 
         root.resizable(False, False)
-        root.title('Button Demo')
+        root.title('GAME')
 
-        # exit button
-        game = ttk.Button(root, text='Start', command= self.start)
-        weiter = ttk.Button(root, text='Weiter', command= self.weiter)
+        game = ttk.Button(root, text='Start', command=start)
+        weiter = ttk.Button(root, text='Musik', command = self.weiter,)
         stop = ttk.Button(root, text='Exit', command=root.destroy)
-
-
 
         game.pack(
             ipadx=5,
@@ -37,7 +46,8 @@ class Menu:
             expand=True
         )
 
-        self.x = 0
+        self.zahl = Zufallszahl(1, 4)
+
 
 
         root.mainloop()
@@ -45,21 +55,23 @@ class Menu:
 
 
 
-    def start(self):
-
-        rl = Rechteck("red", "white")
-        rl.R_zeichnen()
-        rl.R_bewegen()
 
     def weiter(self):
 
+        print(self.zahl)
 
-        if self.x == 0:
-            self.x + 1
+        if self.zahl == 1:
             winsound.PlaySound("outro.wav", SND_ASYNC)
 
-        if self.x == 1:
+        elif self.zahl == 2:
+
             winsound.PlaySound("hotel.wav", SND_ASYNC)
+
+        elif self.zahl == 3:
+
+            winsound.PlaySound("Be MY Lover.wav", SND_ASYNC)
+        else:
+            winsound.PlaySound("Waka Waka.wav", SND_ASYNC)
 
 
 Menu()
