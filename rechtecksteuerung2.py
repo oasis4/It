@@ -4,7 +4,7 @@ from time import *
 from tkinter import messagebox
 from tkinter import *
 class Rechteck:
-    winsound.PlaySound("hotel.wav", winsound.SND_ASYNC)
+
 
     def __init__(self, farbe, hintergrund):
         self.farbe=farbe
@@ -38,7 +38,7 @@ class Rechteck:
                 self.bild.destroy()
                 break
             else:
-                sleep(0.00001)
+                sleep(0.1)
                 self.bild.update()    
         
     def R_links_bewegen(self, event):
