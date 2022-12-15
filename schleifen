@@ -1,0 +1,20 @@
+»»——————————————————————- Schleifen　——————————————————————-««
+
+»»————-　For Schleife　————-««
+
+Die for schleife wird solange ausgeführt bis die Bedingung erfüllt wird
+
+for i in range(10000000, 0, -5):
+    print(i, "Hallo")
+
+
+»»————-　While Schleife　————-««
+
+  solange while true ist wird die Schleife ausgeführt
+
+ while True:
+     a = input("Aufhören? j = ja")
+      if a == "j":
+         break
+
+
