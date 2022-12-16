@@ -7,19 +7,28 @@ from tkinter import ttk
 class Rechteck:
 
 
-    def __init__(self, farbe, hintergrund):
-        self.farbe=farbe
+    def __init__(self, hintergrundfarbe):
+        self.farbe= hintergrundfarbe
 
 
-        self.hintergrund = hintergrund
+
         self.x=1
         self.y=1
         root = Tk()
+
+        img = PhotoImage(file="TEST.png")
+        Label = ttk.Label(root, image=img)
+        Label.pack()
+        self.hintergrund = img
+
         root.title('Steuere das Rechteck!')
-        self.bild = Canvas(root, background = self.hintergrund, width = 500, height = 500)
+        self.bild = Canvas(root, width = 500, height = 500)
         self.bild.pack()
+
+        self.bild.create_image(10, 10, anchor=NW, image=img)
+
         koordinaten = [180, 160, 210, 250]
-        self.rectangle=self.bild.create_rectangle(koordinaten, fill = self.farbe)
+        self.rectangle = self.bild.create_rectangle(koordinaten, fill=self.farbe)
         root.bind("<KeyPress-a>", self.R_links_bewegen)
         root.bind("<KeyPress-d>", self.R_rechts_bewegen)
         root.bind("<KeyPress-s>", self.R_abwaerts_bewegen)

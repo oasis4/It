@@ -12,7 +12,7 @@ def Zufallszahl(x, y):
 
 def start():
 
-    rl = Rechteck("red", "white")
+    rl = Rechteck("red")
     rl.R_zeichnen()
     rl.R_bewegen()
 
@@ -28,6 +28,8 @@ class Menu:
         game = ttk.Button(root, text='Start', command=start)
         weiter = ttk.Button(root, text='Musik', command = self.weiter,)
         stop = ttk.Button(root, text='Exit', command=root.destroy)
+
+
 
         game.pack(
             ipadx=5,
@@ -48,13 +50,7 @@ class Menu:
 
         self.zahl = Zufallszahl(1, 4)
 
-
-
         root.mainloop()
-
-
-
-
 
     def weiter(self):
 
