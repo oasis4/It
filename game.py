@@ -12,7 +12,8 @@ def Zufallszahl(x, y):
 
 def start():
 
-    rl = Rechteck("red")
+    rl = Rechteck("red","white")
+    Rechteck
     rl.R_zeichnen()
     rl.R_bewegen()
 
