@@ -6,7 +6,7 @@ import winsound
 
 
 class Menu:
-    winsound.PlaySound("outro.wav", winsound.SND_ASYNC)
+
 
     def __init__(self):
 
@@ -53,6 +53,8 @@ class Menu:
         if antwort == self.z:
             self.label.config(text = "Richtig")
             self.label.config(bg = "green")
+
+
 
 
         else:
