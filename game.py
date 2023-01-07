@@ -110,6 +110,9 @@ class Menu:
 
         self.root.mainloop()
 
+        # Hover Animation
+
+
     def start(self):
         rl = Rechteck("red", "white", self.time)
         rl.R_zeichnen()
@@ -139,6 +142,8 @@ class Menu:
     def schwer(self):
         self.time = 0.01
         self.newWindow.destroy()
+
+
 
 
     def weiter(self):
