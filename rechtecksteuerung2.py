@@ -6,13 +6,12 @@ from tkinter import *
 from tkinter import ttk
 class Rechteck:
 
-
     def __init__(self, farbe, hintergrund, time):
 
         self.farbe = farbe
         self.time = time
 
-        self.hintergrund= hintergrund
+        self.hintergrund = hintergrund
 
         self.x=1
         self.y=1
