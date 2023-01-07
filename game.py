@@ -13,9 +13,9 @@ def Zufallszahl(x, y):
 
 def start():
     rl = Rechteck("red", "white")
-    Rechteck
     rl.R_zeichnen()
     rl.R_bewegen()
+
 
 
 def gf():
@@ -36,7 +36,7 @@ class Menu:
         root = Tk()
         root.focus_force()
         root.resizable(False, False)
-        
+
 
         root.title('GAME')
 
@@ -87,6 +87,8 @@ class Menu:
         self.canvas.create_window(100, 160, window=quiz)
         self.canvas.create_window(100, 200, window=weiter)
 
+        self.canvas.create_window(300, 230, window=stop)
+
         self.zahl = Zufallszahl(1, 4)
 
         root.mainloop()
@@ -96,11 +98,11 @@ class Menu:
         print(self.zahl)
 
         if self.zahl == 1:
-            winsound.PlaySound("outro.wav", SND_ASYNC)
+            winsound.PlaySound("feeling.wav", SND_ASYNC)
 
         elif self.zahl == 2:
 
-            winsound.PlaySound("hotel.wav", SND_ASYNC)
+            winsound.PlaySound("animals.wav", SND_ASYNC)
 
         elif self.zahl == 3:
 
