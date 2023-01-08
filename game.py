@@ -30,6 +30,7 @@ class Menu:
         self.root = Tk()
         self.root.focus_force()
         self.root.resizable(False, False)
+        self.root.focus_force()
 
         self.time = 0.05
 
@@ -50,13 +51,13 @@ class Menu:
 
 
 
-        game = Button(self.root, text='Spiel',  command=self.start)
+        game = Button(self.root,width=10,height=1, text='Spiel',  command=self.start)
 
-        quiz = Button(self.root, text='Quiz',  command=qz)
+        quiz = Button(self.root,width=10,height=1, text='Quiz',  command=qz)
 
-        grafik = Button(self.root, text='Zahlenraten',  command=gf)
+        grafik = Button(self.root,width=10,height=1, text='Zahlenraten',  command=gf)
 
-        weiter = Button(self.root, text='Musik',  command=self.weiter)
+        weiter = Button(self.root,width=10,height=1, text='Musik',  command=self.weiter)
 
         stop = Button(self.root, text='Exit',  command=self.root.destroy)
 
@@ -66,6 +67,7 @@ class Menu:
         self.Hover(grafik, "SkyBlue2", "white")
         self.Hover(weiter, "SkyBlue2", "white")
         self.Hover(stop, "red", "white")
+
 
         game.pack(
             ipadx=5,
@@ -100,7 +102,7 @@ class Menu:
         self.canvas.create_window(100, 160, window=quiz)
         self.canvas.create_window(100, 200, window=weiter)
 
-        self.canvas.create_window(300, 230, window=stop)
+        self.canvas.create_window(320, 230, window=stop)
 
         self.zahl = Zufallszahl(1, 4)
 
@@ -112,6 +114,7 @@ class Menu:
         einstellungbutton = Button(self.root, image=einstellungimg, width=70, height=70, command=self.createNewWindow, borderwidth=0)
         einstellungbutton.pack(pady=30)
         einstellungbutton.place(x=280, y=40)
+
 
         self.root.mainloop()
 
