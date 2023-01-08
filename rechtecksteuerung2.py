@@ -37,10 +37,10 @@ class Rechteck:
             #print(self.bild.coords(self.rectangle))
             if self.bild.coords(self.rectangle)[1]<0 or self.bild.coords(self.rectangle)[3]>500:
                 messagebox.showinfo(title='Ende', message='Verloren!!')
-                self.bild.destroy()
+                root.destroy()
                 break
             elif self.bild.coords(self.rectangle)[0]<0 or self.bild.coords(self.rectangle)[2]>500:
-                self.bild.destroy()
+                root.destroy()
                 break
             else:
                 sleep(self.time)

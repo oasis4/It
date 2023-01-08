@@ -7,9 +7,7 @@ from random import *
 from PIL import Image, ImageTk
 
 
-def Zufallszahl(x, y):
-    z = randint(x, y)
-    return z
+
 
 
 def gf():
@@ -101,20 +99,16 @@ class Menu:
         self.canvas.create_window(100, 120, window=grafik)
         self.canvas.create_window(100, 160, window=quiz)
         self.canvas.create_window(100, 200, window=weiter)
-
         self.canvas.create_window(320, 230, window=stop)
 
-        self.zahl = Zufallszahl(1, 4)
+
 
         #image Button
-
         einstellungimg = PhotoImage(file='einstellungen.png')
-
 
         einstellungbutton = Button(self.root, image=einstellungimg, width=70, height=70, command=self.createNewWindow, borderwidth=0)
         einstellungbutton.pack(pady=30)
         einstellungbutton.place(x=280, y=40)
-
 
         self.root.mainloop()
 
@@ -128,12 +122,10 @@ class Menu:
         button.bind("<Leave>", func=lambda e: button.config(
             background=colorOnLeave))
 
-
     def start(self):
         rl = Rechteck("red", "white", self.time)
         rl.R_zeichnen()
         rl.R_bewegen()
-
 
     def createNewWindow(self):
         self.newWindow = tk.Toplevel(self.root)
@@ -141,7 +133,6 @@ class Menu:
         einfach = tk.Button(self.newWindow, text="einfach", command=self.einfach)
         normal = tk.Button(self.newWindow, text="normal", command=self.normal)
         schwer = tk.Button(self.newWindow, text="schwer", command=self.schwer)
-
 
         Text.pack()
         einfach.pack()
@@ -160,10 +151,13 @@ class Menu:
         self.time = 0.01
         self.newWindow.destroy()
 
-
-
-
     def weiter(self):
+
+        def Zufallszahl(x, y):
+            z = randint(x, y)
+            return z
+
+        self.zahl = Zufallszahl(1, 4)
 
         print(self.zahl)
 
@@ -179,6 +173,5 @@ class Menu:
             winsound.PlaySound("Be MY Lover.wav", SND_ASYNC)
         else:
             winsound.PlaySound("Waka Waka.wav", SND_ASYNC)
-
 
 Menu()
