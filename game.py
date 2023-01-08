@@ -12,9 +12,6 @@ def Zufallszahl(x, y):
     return z
 
 
-
-
-
 def gf():
     import Grafiken
 
@@ -34,6 +31,8 @@ class Menu:
         self.root.focus_force()
         self.root.resizable(False, False)
 
+        self.time = 0.05
+
 
         self.root.title('Spiele')
 
@@ -51,16 +50,22 @@ class Menu:
 
 
 
-        game = ttk.Button(self.root, text='Spiel', command=self.start)
+        game = Button(self.root, text='Spiel',  command=self.start)
 
-        quiz = ttk.Button(self.root, text='Quiz', command=qz)
+        quiz = Button(self.root, text='Quiz',  command=qz)
 
-        grafik = ttk.Button(self.root, text='Zahlenraten', command=gf)
+        grafik = Button(self.root, text='Zahlenraten',  command=gf)
 
-        weiter = ttk.Button(self.root, text='Musik', command=self.weiter)
+        weiter = Button(self.root, text='Musik',  command=self.weiter)
 
+        stop = Button(self.root, text='Exit',  command=self.root.destroy)
 
-        stop = ttk.Button(self.root, text='Exit', command=self.root.destroy)
+        #Hover
+        self.Hover(game, "SkyBlue2", "white")
+        self.Hover(quiz, "SkyBlue2", "white")
+        self.Hover(grafik, "SkyBlue2", "white")
+        self.Hover(weiter, "SkyBlue2", "white")
+        self.Hover(stop, "red", "white")
 
         game.pack(
             ipadx=5,
@@ -112,11 +117,20 @@ class Menu:
 
         # Hover Animation
 
+    def Hover(self,button, colorOnHover, colorOnLeave):
+
+        button.bind("<Enter>", func=lambda e: button.config(
+            background=colorOnHover))
+
+        button.bind("<Leave>", func=lambda e: button.config(
+            background=colorOnLeave))
+
 
     def start(self):
         rl = Rechteck("red", "white", self.time)
         rl.R_zeichnen()
         rl.R_bewegen()
+
 
     def createNewWindow(self):
         self.newWindow = tk.Toplevel(self.root)
