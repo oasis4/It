@@ -29,11 +29,13 @@ class Menu:
         self.root.focus_force()
         self.root.resizable(False, False)
         self.root.focus_force()
+        self.root.iconbitmap('favicon.ico')
+
 
         self.time = 0.05
 
 
-        self.root.title('Spiele')
+        self.root.title('Menu')
 
         image = Image.open("Hintergrund.jpg")
         image = image.resize((290, 200), Image.ANTIALIAS)
