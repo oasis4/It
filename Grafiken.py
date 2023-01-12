@@ -40,7 +40,7 @@ class Menu:
 
     def start(self):
 
-        self.label.config(text = "Rate die Zahl von 1 bis 10")
+        self.label.config(text = "Rate die Zahl von 0 bis 10")
         self.z = self.zufallszahl(0, 10)
 
 
