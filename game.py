@@ -6,10 +6,6 @@ from winsound import *
 from random import *
 from PIL import Image, ImageTk
 
-
-
-
-
 def gf():
     import Grafiken
 
@@ -102,8 +98,6 @@ class Menu:
         self.canvas.create_window(100, 160, window=quiz)
         self.canvas.create_window(100, 200, window=weiter)
         self.canvas.create_window(320, 230, window=stop)
-
-
 
         #image Button
         einstellungimg = PhotoImage(file='einstellungen.png')
