@@ -1,14 +1,10 @@
 import tkinter as tk
-import winsound
-from tkinter import ttk
 from rechtecksteuerung2 import *
 from winsound import *
 from random import *
 from PIL import Image, ImageTk
 
 def gf():
-    import Grafiken
-
     menu = Menu()
     menu.start()
 
@@ -30,10 +26,9 @@ class Menu:
 
         self.time = 0.05
 
-
         self.root.title('Menu')
 
-        image = Image.open("Hintergrund.jpg")
+        image = Image.open("hintergrund.jpg")
         image = image.resize((290, 200), Image.ANTIALIAS)
         pic = ImageTk.PhotoImage(image)
 
@@ -44,8 +39,6 @@ class Menu:
 
         self.canvas.create_image(200, 150, image=pic, anchor=CENTER)
         self.canvas.pack(fill=tk.BOTH, expand=True)
-
-
 
         game = Button(self.root,width=10,height=1, text='Spiel',  command=self.start)
 
